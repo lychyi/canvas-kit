@@ -61,7 +61,7 @@ through the commit history. It also automates [semantic versioning](http://semve
 
 - Explain the additions/edits/fixes made in your staged changes. If you cannot describe it within
   ~50 characters, you should be breaking it into multiple commits
-- Use the imperative mood (e.g. "fixed", not "fix")
+- Use the imperative mood (e.g. "fix", not "fixed")
 - Start with a verb
 - Use the body of the commit if more context is needed
 - If you have similar/identical commits one after another (i.e. snapshot updates), consider using
