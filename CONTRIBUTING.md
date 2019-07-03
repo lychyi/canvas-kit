@@ -130,14 +130,14 @@ possible.
 ### Creating a module
 
 1.  Run `yarn create-module`
-2.  Enter in a module name, description and author. You'll be prompted to choose if you also want to
-    create a CSS module.
+2.  Enter in a module name and description. You'll be prompted to choose if you also want to create
+    a CSS module.
 3.  (optional) Add any required dependencies on other modules
 4.  (optional) If you added any extra dependencies, run `yarn`
 5.  Start Storybook `yarn start`
 6.  Navigate to [http://localhost:9001/](http://localhost:9001/) and find your new module's story
-7.  Begin editing your new React component in `modules/canvas-kit-react-<NAME>/react/index.ts` and
-    CSS module in `modules/canvas-kit-react-<NAME>/css/index.scss`!
+7.  Begin editing your new React component in `modules/<MODULE_NAME>/react/index.ts` and CSS module
+    in `modules/<MODULE_NAME>/css/index.scss`!
 
 ### Exporting a Module
 
@@ -146,8 +146,8 @@ possible.
 1. If your module's `index.ts` has a default export, make sure it is available as a named export as
    well. This allows for greater flexibility in how developers consume your module.
 2. Add your module as a dependency in `modules/_canvas-kit-react/package.json`.
-3. Add `export * from '@workday/canvas-kit-react-<NAME>'` to `modules/_canvas-kit-react/index.ts` so
-   that consumers of our bundle module (`@workday/canvas-kit-react`) can use your module too.
+3. Add `export * from '@workday/<MODULE_NAME>'` to `modules/_canvas-kit-react/index.ts` so that
+   consumers of our bundle module (`@workday/canvas-kit-react`) can use your module too.
 
 #### CSS
 
