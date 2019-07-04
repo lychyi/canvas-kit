@@ -146,8 +146,9 @@ possible.
 1. If your module's `index.ts` has a default export, make sure it is available as a named export as
    well. This allows for greater flexibility in how developers consume your module.
 2. Add your module as a dependency in `modules/_canvas-kit-react/package.json`.
-3. Add `export * from '@workday/<MODULE_NAME>'` to `modules/_canvas-kit-react/index.ts` so that
-   consumers of our bundle module (`@workday/canvas-kit-react`) can use your module too.
+3. Add `export * from '@workday/canvas-kit-react-<MODULE_NAME>'` to
+   `modules/_canvas-kit-react/index.ts` so that consumers of our bundle module
+   (`@workday/canvas-kit-react`) can use your module too.
 
 #### CSS
 
