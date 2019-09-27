@@ -10,10 +10,23 @@ import ReactDOM from 'react-dom';
 
 import {commonColors, typeColors, fontFamily} from '../modules/core/react';
 import {InputProviderDecorator} from '../utils/storybook';
-const req = require.context('../modules', true, /stories.*\.tsx?$/);
 
 function loadStories() {
-  req.keys().forEach(req);
+  const react = require.context('../modules', true, /react\/stories.*\.tsx?$/);
+  const css = require.context('../modules', true, /css\/stories.*\.tsx?$/);
+  const labs = require.context('../modules/_labs', true, /stories.*\.tsx?$/);
+
+  // Loading order is the order in which stories appear
+  // When we update to Storybook 5.2, then we can sort as an option param in `addParameters` below
+  react
+    .keys()
+    .filter(key => !/_labs/.test(key))
+    .forEach(key => react(key));
+  css
+    .keys()
+    .filter(key => !/_labs/.test(key))
+    .forEach(key => css(key));
+  labs.keys().forEach(key => labs(key));
 }
 
 addDecorator(withKnobs);
